@@ -1,9 +1,20 @@
+'use client';
+
 import SettingsTabs from "@/components/SettingsTabs";
 import * as Input from '@/components/Input';
+import * as FileInput from '@/components/Form/FileInput';
 
 import {HiOutlineMail} from 'react-icons/hi';
+import {LiaBoldSolid } from 'react-icons/lia';
+import {ImItalic } from 'react-icons/im';
+import Select from "@/components/Form/Select";
+import SelectItem from "@/components/Form/Select/SelectItem";
+import { BiLink } from "react-icons/bi";
+import { BsList, BsListUl } from "react-icons/bs";
+
 
 export default function Home() {
+
   return (
     <>
       <h1 className="text-3xl font-medium text-zinc-900">Settings</h1>
@@ -82,7 +93,11 @@ export default function Home() {
                   This will be display on your profile
                 </span>
             </label>
-            <div></div>
+              <FileInput.Root className="flex items-start gap-5">
+                <FileInput.ImagePreview />
+                <FileInput.Trigger />
+                <FileInput.Control />
+              </FileInput.Root>
           </div>
 
           <div className="grid gap-3 grid-cols-form pt-7 pb-2 items-center">
@@ -103,7 +118,10 @@ export default function Home() {
               className="text-sm font-medium text-zinc-700">
                 Country
             </label>
-            <div></div>
+            <Select placeholder="Select a country...">
+              <SelectItem value="br" text="Brazil"/>
+              <SelectItem value="us" text="United States"/>
+            </Select>
           </div>
 
           <div className="grid gap-3 grid-cols-form pt-7 pb-2 items-center">
@@ -112,7 +130,10 @@ export default function Home() {
               className="text-sm font-medium text-zinc-700">
                 Timezone
             </label>
-            <div></div>
+            <Select placeholder="Select a timezone...">
+              <SelectItem value="utc8" text="Pacific Standard Time (UTC-08:00)"/>
+              <SelectItem value="utc3" text="America São Paulo (UTC-03:00)"/>
+            </Select>
           </div>
 
           <div className="grid gap-3 grid-cols-form pt-7 pb-2 items-center">
@@ -124,7 +145,34 @@ export default function Home() {
                   Write a short introduction.
                 </span>
             </label>
-            <div></div>
+            <div className="space-y-3">
+              <div className="grid gap-3 grid-cols-2">
+                <Select placeholder="" defaultValue="normal">
+                  <SelectItem value="normal" defaultChecked text="Normal text"/>
+                  <SelectItem value="md" text="Markdown"/>
+                </Select>
+
+                <div className="flex items-center gap-1">
+                  <button type="button" className="nl-auto p-2 rounded-md hover:bg-zinc-50">
+                    <LiaBoldSolid className='h-4 w-4 text-zinc-500'/>
+                  </button>
+                  <button type="button" className="nl-auto p-2 rounded-md hover:bg-zinc-50">
+                    <ImItalic className='h-4 w-4 text-zinc-500'/>
+                  </button>
+                  <button type="button" className="nl-auto p-2 rounded-md hover:bg-zinc-50">
+                    <BiLink className='h-4 w-4 text-zinc-500'/>
+                  </button>
+                  <button type="button" className="nl-auto p-2 rounded-md hover:bg-zinc-50">
+                    <BsList className='h-4 w-4 text-zinc-500'/>
+                  </button>
+                  <button type="button" className="nl-auto p-2 rounded-md hover:bg-zinc-50">
+                    <BsListUl className='h-4 w-4 text-zinc-500'/>
+                  </button>
+                </div>
+              </div>
+
+              <textarea id="bio" defaultValue="I'm a Devloper..." className="min-h-[120px] resize-y w-full rounded-lg border border-zinc-300 px-3 py-2 text-zinc-400" />
+            </div>
           </div>
 
           <div className="grid gap-3 grid-cols-form pt-7 pb-2 items-center">
@@ -136,7 +184,11 @@ export default function Home() {
                   Share a few snippets of your work.
                 </span>
             </label>
-            <div></div>
+              <FileInput.Root>
+                <FileInput.Trigger />
+                <FileInput.FileList />
+                <FileInput.Control multiple/>
+              </FileInput.Root>
           </div>
 
           <div className="flex items-center justify-end gap-2 pt-5">
