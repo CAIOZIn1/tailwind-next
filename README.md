@@ -10,4 +10,4 @@
 npm i
 npm run dev
 ```
-<p>acesser nesse <a href='[https:https://tailwind-next-lake.vercel.app/'>Link</p>
+<p>acesser nesse <a href='https://tailwind-next-lake.vercel.app/'>Link</p>
