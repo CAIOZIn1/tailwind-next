@@ -23,7 +23,7 @@ const Sidebar = () => {
 
       <MainNavigation />
 
-      <div className='mt-auto flex flex-col gap-9'>
+      <div className='mt-auto flex flex-col gap-6'>
         <nav>
           <NavItem title='Support' icon={MdOutlineSupportAgent}/>
           <NavItem title='Settings' icon={SlSettings}/>
