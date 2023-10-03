@@ -1,4 +1,4 @@
-import Sidebar from '@/components/Sidebar'
+import { Sidebar } from '@/components/Sidebar'
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
@@ -16,13 +16,11 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="pt-br" className='antialiased'>
+    <html lang="en" className="antialiased">
       <body className={inter.className}>
-        <div className='grid min-h-screen grid-cols-app'>
+        <div className="grid min-h-screen grid-cols-app">
           <Sidebar />
-          <main className='px-8 pb-12 pt-8'>
-            {children}
-          </main>
+          <main className="px-8 pb-12 pt-8">{children}</main>
         </div>
       </body>
     </html>
