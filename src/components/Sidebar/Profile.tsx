@@ -1,11 +1,10 @@
 import { LogOut } from 'lucide-react'
 import { Button } from '../Button'
-import Image from 'next/image'
 
 export function Profile() {
   return (
     <div className="grid grid-cols-profile items-center gap-3">
-      <Image
+      <img
         src="https://github.com/CAIOZIn1.png"
         className="h-10 w-10 rounded-full"
         alt="image-profile"
